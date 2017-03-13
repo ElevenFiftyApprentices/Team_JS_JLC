@@ -5,6 +5,37 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
   function ($scope, $stateParams, $location, Authentication, Articles) {
     $scope.authentication = Authentication;
 
+   $scope.items = [
+    {
+      id: 'item1',
+      name: 'item1'
+    }, 
+    { 
+      id: 'item2', 
+      name: 'item2'
+    }, 
+    { 
+      id: 'item3', 
+      name: 'item3'
+    }
+  ];
+   
+   $scope.addNewItem = function() {
+     var newItemNo = $scope.items.length+1;
+     $scope.items.push({'id' : 'item' + newItemNo, 'name' : 'item' + newItemNo});
+   };
+   
+   $scope.removeNewItem = function() {
+     var newItemNo = $scope.items.length-1;
+     if ( newItemNo !== 0 ) {
+      $scope.items.pop();
+     }
+   };
+   
+   $scope.showAddItem = function(item) {
+     return item.id === $scope.items[$scope.items.length-1].id;
+   };
+
     // Create new Article
     $scope.create = function (isValid) {
       $scope.error = null;
