@@ -22,7 +22,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
    
    $scope.addNewItem = function() {
      var newItemNo = $scope.items.length+1;
-     $scope.items.push({'id' : 'item' + newItemNo, 'name' : 'item' + newItemNo});
+     $scope.items.push({ 'id' : 'item' + newItemNo, 'name' : 'item' + newItemNo });
    };
    
    $scope.removeNewItem = function() {
