@@ -4,11 +4,19 @@
   </div>
   <div class="list-group">
     <a ng-repeat="list in vm.lists"
-       ui-sref="lists.view({ listId: list._id })"
+       ui-sref="lists.edit({ listId: list._id })"
        class="list-group-item">
       <small class="list-group-item-text">
-        Posted on
+        Created:
         <span ng-bind="list.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="list.user" ng-bind="list.user.displayName"></span>
+        <span ng-if="!list.user">Deleted User</span>
+      </small>
+      <br>
+      <small class="list-group-item-text">
+        Modified:
+        <span ng-bind="list.modified | date:'mediumDate'"></span>
         by
         <span ng-if="list.user" ng-bind="list.user.displayName"></span>
         <span ng-if="!list.user">Deleted User</span>
