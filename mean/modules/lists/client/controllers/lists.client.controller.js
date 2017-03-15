@@ -17,6 +17,8 @@
     vm.form = {};
     vm.remove = remove;
     vm.save = save;
+    vm.completeList = [];
+    vm.addItem = addItem;
 
     // Remove existing List
     function remove() {
@@ -24,9 +26,17 @@
         vm.list.$remove($state.go('lists.list'));
       }
     }
+      //add items to list array
+      function addItem(isValid) {
+        vm.completeList.push(vm.list.item);
+
+        vm.list.item = '';
+    }
 
     // Save List
     function save(isValid) {
+      vm.list.items = vm.completeList;
+
       if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.listForm');
         return false;
