@@ -36,44 +36,85 @@ a:hover .header-profile-image {
   display: inline;
 }
 
-/*
-**********************************//*
-**********************FORMATTING FOR CHECKBOX***********************/
-input [type=checkbox].css-checkbox {
-  position:absolute; 
-  z-index:-1000; 
-  left:-1000px; 
-  overflow: hidden; 
-  clip: rect(0 0 0 0); 
-  height:1px; 
-  width:1px; 
-  margin:-1px; 
-  padding:0; 
-  border:0;
+
+/*********************************************************************
+**********************FORMATTING FOR CHECKBOX***********************
+*********************************************************************/
+
+/****************** SIZE OF LIST GROUP ITEM DIV 
+************************must be big enough to accomodate button and content*/
+
+div .list-group-item {
+  border: 3px solid blue;
+  height: auto !important;
+  min-height: 200px;
 }
 
-input[type=checkbox].css-checkbox + label.css-label {
-  padding-left:25px;
-  height:20px; 
-  display:inline-block;
-  line-height:20px;
-  background-repeat:no-repeat;
-  background-position: 0 0;
-  font-size:20px;
-  vertical-align:middle;
-  cursor:pointer;
+
+/****************** This makes the checkbox disapper!*****************/
+/*input[type=checkbox] {
+  visibility: hidden;
+}*/
+
+/******************* STYLING FOR CHECKBOX ****************/
+
+.checkbox4 {
+  width: 20px;
+  height: 20px;
+  background: #ddd;
+  margin: 20px 90px;
+  border-radius: 100%;
+  position: relative;
+-webkit-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+-moz-box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
 }
 
-input[type=checkbox].css-checkbox:checked + label.css-label {
-  background-position: 0 -20px;
+.checkbox label {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+-webkit-transition: all .5s ease;
+-moz-transition: all .5s ease;
+-o-transition: all .5s ease;
+-ms-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  background: #333;
+-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+  box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
 }
 
-label.css-label {
-  background-image:url(http://csscheckbox.com/checkboxes/u/csscheckbox_478ad1ee3b2b224b3eef8818f5fb2916.png);
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+
+.checkbox4 label {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100px;
+-webkit-transition: all .5s ease;
+-moz-transition: all .5s ease;
+-o-transition: all .5s ease;
+-ms-transition: all .5s ease;
+  transition: all .5s ease;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  z-index: 1;
+  background: #333;
+-webkit-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+-moz-box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+  box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+/******************* CHECKED STATE, STYLING *****************/
+
+.checkbox4 input[type=checkbox]:checked + label {
+  background: #26ca28;
 }
