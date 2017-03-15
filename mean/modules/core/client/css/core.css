@@ -115,6 +115,11 @@ div .list-group-item {
 
 /******************* CHECKED STATE, STYLING *****************/
 
-.checkbox4 input[type=checkbox]:checked + label {
+/*.checkbox4 input[type=checkbox]:checked + label {
   background: #26ca28;
+  text-decoration: line-through;
+}*/
+
+input[type="checkbox"]:checked { 
+  text-decoration: line-through; 
 }
