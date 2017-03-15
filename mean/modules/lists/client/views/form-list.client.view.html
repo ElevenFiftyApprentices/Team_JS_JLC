@@ -53,12 +53,19 @@
       <h3>List</h3>
         <div class="card">
           <ul style="list-style: none" >
+
             <li ng-repeat="item in vm.completeList" >  <div class="pull-left" >
     <label>
-    <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>
+    <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>    
+    <div class="pull-right">
+    </div>
   </div>
               
                {{item}}
+
+  <a class="btn btn-primary" ng-click="remove();">
+   <i class="glyphicon glyphicon-trash"></i></a>
+
             </li>
           </ul>
         </div>
