@@ -39,11 +39,13 @@
           <label class="control-label" for="listitem">List Item</label>
             <input name="item" type="text" ng-model="vm.list.item" id="item" class="form-control" placeholder="Enter Item" required>
           <div class="form-group" style="padding: 25px" > 
-            <button type="submit" class="btn btn-default">Add Item</button>
+            <button ng-click="addItem()" class="btn btn-default">Add Item</button>
           </div>  
 
                   <div class="form-group">
-          <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
+          <button type="submit" onclick="save(isValid)" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
+
+
         </div>
         </fieldset>  
       </form>    
