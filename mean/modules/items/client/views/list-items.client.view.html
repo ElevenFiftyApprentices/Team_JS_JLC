@@ -15,7 +15,15 @@
         <span ng-if="item.user" ng-bind="item.user.displayName"></span>
         <span ng-if="!item.user">Deleted User</span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="item.name"></h4>
+      <h4 class="list-group-item-heading" ng-bind="item.name">
+        
+Line 8?
+      <p class="list-group-item-text" ng-bind="item.item"></p>
+
+line 11.
+        
+      </h4>
+
     </a>
   </div>
   <div class="alert alert-warning text-center" ng-if="vm.items.$resolved && !vm.items.length">
