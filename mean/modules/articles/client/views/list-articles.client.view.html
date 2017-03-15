@@ -1,3 +1,6 @@
+  <!--TO BE CONNECTED: Line 32(ish); checkbox, checkbox4: ng-click="functionItemChecked()"-->
+
+
 <section ng-controller="ArticlesController" ng-init="find()">
   <div class="page-header">
     <h1>Articles</h1>
@@ -29,9 +32,8 @@
   
   <div class="pull-left" >
     <label>
-    <input type="checkbox" class="checkbox4" ng-checked="text-decoration: line-through" /> {{article.content}}</label>
+    <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>
   </div>
-
   
   </div>
 </div>
@@ -44,10 +46,3 @@
 
 
 </section>
-
-
-<!--STILL NEEDED : -->
-  <!--ng-checked="isChecked(?)" -->
-  <!--ng-click=remove()-->
-  <!--function to clear all checked items-->
-  <!--function to change text when item is clicked-->
