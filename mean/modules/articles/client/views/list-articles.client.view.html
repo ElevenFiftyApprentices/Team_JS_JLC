@@ -1,21 +1,48 @@
+  <!--TO BE CONNECTED: Line 32(ish); checkbox, checkbox4: ng-click="functionItemChecked()"-->
+
+
 <section ng-controller="ArticlesController" ng-init="find()">
   <div class="page-header">
     <h1>Articles</h1>
   </div>
-  <div class="list-group">
-    <a ng-repeat="article in articles" ui-sref="articles.view({articleId: article._id})" class="list-group-item">
+
+<!-- REMOVED FOR DEVELOPMENT: ng-show="authentication.user._id == article.user._id" -->
+
+
+<div class="list-group">
+  <div ng-repeat="article in articles" class="list-group-item">
+
+<!-- Lead text -->
       <small class="list-group-item-text">
         Posted on
         <span ng-bind="article.created | date:'mediumDate'"></span>
         by
         <span ng-bind="article.user.displayName"></span>
       </small>
-      <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
-      <p class="list-group-item-text" ng-bind="article.content"></p>
 
-    </a>
+<!--DELETE ITEM-->
+    <div class="pull-right">
+        <a class="btn btn-primary" ng-click="remove();">
+        <i class="glyphicon glyphicon-trash"></i></a>
+    </div>
+
+<!-- bind text text ((LIST ITEM CONTENT))-->
+
+    <h4 class="list-group-item-heading" ng-bind="article.title"></h4>
+  
+  <div class="pull-left" >
+    <label>
+    <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>
   </div>
+  
+  </div>
+</div>
+
+
+<section>
   <div class="alert alert-warning text-center" ng-if="articles.$resolved && !articles.length">
     No articles yet, why don't you <a ui-sref="articles.create">create one</a>?
   </div>
+
+
 </section>

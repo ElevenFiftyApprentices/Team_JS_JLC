@@ -36,6 +36,10 @@ a:hover .header-profile-image {
   display: inline;
 }
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8a1da2502e439e9fcfa0eee51b6185b96738f37f
 /*********************************************************************
 **********************FORMATTING FOR CHECKBOX***********************
 *********************************************************************/
@@ -121,4 +125,8 @@ div .list-group-item {
 
 input[type="checkbox"]:checked { 
   text-decoration: line-through; 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 8a1da2502e439e9fcfa0eee51b6185b96738f37f
