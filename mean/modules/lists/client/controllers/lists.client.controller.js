@@ -20,6 +20,7 @@
     vm.completeList = [];
     vm.addItem = addItem;
 
+
     // Remove existing List
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
@@ -27,10 +28,37 @@
       }
     }
       //add items to list array
-      function addItem(isValid) {
+      function addItem() {
         vm.completeList.push(vm.list.item);
 
         vm.list.item = '';
+
+        if (!isValid) {
+        $scope.$broadcast('show-errors-check-validity', 'vm.form.formItemList');
+        return false;
+      }
+
+      // TODO: move create/update logic to service
+      if (vm.list._id) {
+
+        vm.list.$update().then(
+          $state.go('lists.list')
+          );
+      } else {
+        vm.list.$save().then(
+          $state.go('lists.list')
+          );
+      }
+
+      function successCallback(res) {
+        $state.go('lists.view', {
+          listId: res._id
+        });
+      }
+
+      function errorCallback(res) {
+        vm.error = res.data.message;
+      }
     }
 
     // Save List
@@ -68,7 +96,7 @@
 
 
 
-      //old code below
+      //old code below(ITS A TRAP)
       // if (vm.list._id) {
       //   vm.list.$update(successCallback, errorCallback);
       // } else {
