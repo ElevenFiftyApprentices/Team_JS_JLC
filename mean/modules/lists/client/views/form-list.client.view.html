@@ -79,9 +79,13 @@
             <li ng-repeat="item in vm.completeList track by $index">
 
             <li ng-repeat="item in vm.completeList" >  <div class="pull-left" >
-              <label><input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{list.content}}</label>    
-          
-               {{item}}
+            
+              <label><input type="checkbox" class="checkbox4" ngChecked="line-through">  
+
+<a name="sec" href="javascript:void(0);" onclick="this.style.color='green';">
+  this is a test
+</a>          
+               {{item}}{{list.content}}</label>   
 
             <a class="btn btn-primary btn-xs" ng-click="remove();">
             <i class="glyphicon glyphicon-trash"></i></a>
