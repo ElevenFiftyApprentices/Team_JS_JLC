@@ -8,12 +8,10 @@
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="name"> List Name</label>
-<!-- <<<<<<< HEAD
- -->          <input name="name" style="width: 200px" type="text" ng-model="vm.list.name" id="name" class="form-control" placeholder="Name" required>
-<!-- =======
- --> <!--            <input name="name" type="text" ng-model="vm.list.name" id="name" class="form-control" placeholder="Name" required> -->
-<!-- >>>>>>> f3b112011d3e41ac5a976dba3215d14344dfa7f5
- -->
+
+          <input name="name" style="width: 200px" type="text" ng-model="vm.list.name" id="name" class="form-control" placeholder="Name" required>
+
+
           <div ng-messages="vm.form.listForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">List name is required.</p>
           </div>
@@ -49,7 +47,7 @@
       <form name="vm.form.listForm" class="form-horizontal" ng-submit="vm.addItem(vm.form.listItems.$valid)" novalidate>
         <fieldset>
           <label class="control-label" for="listitem">List Item</label>
-<<<<<<< HEAD
+
             <input name="item" type="text" ng-model="vm.list.item" id="item" class="form-control" placeholder="Enter Item" required>
           <div class="form-group" style="padding: 25px" > 
             <button ng-click="addItem()" class="btn btn-default">Add Item</button>
@@ -66,24 +64,17 @@
           </div>
 
 
-
-
-=======
             <input name="item"  style="width: 200px" type="text" ng-model="vm.list.item" id="item" class="form-control" placeholder="Enter Item" required>
           <div class="form-group" style="padding: 20px" > 
             <button type="submit" class="btn btn-default">Add Item</button>
           </div>  
 
-<!-- <<<<<<< HEAD
- -->                  <div class="form-group"  style="padding: 20px" >
+
+                  <div class="form-group"  style="padding: 20px" >
           <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
         </div>
-<!-- =======
-              <div class="form-group">
-                <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
-              </div>
->>>>>>> f3b112011d3e41ac5a976dba3215d14344dfa7f5 -->
->>>>>>> 15d4ba19c20728c68cc34070bbb5908eaa2df127
+
+
         </fieldset>  
       </form>    
     </div>
@@ -91,68 +82,27 @@
     <div class="col-md-6">
       <h3>List</h3>
         <div class="card">
-<!-- <<<<<<< HEAD
- -->          <ul style="list-style: none">
+
+          <ul style="list-style: none">
             <li ng-repeat="item in vm.completeList track by $index">
               <div class=" pull-left">
-                <!-- <label><input type="checkbox" class="checkbox3" ng-click="functionItemChecked()"> {{list.content}}</label> -->
+
               </div>
-<!-- =======
- --><!--           <ul style="list-style: none" >
-
-<<<<<<< HEAD
-=======
-<!-- <<<<<<< HEAD -->
->>>>>>> 0710f97c720d99ff35b894f128b58a93c82f471b
-            <li ng-repeat="item in vm.completeList" >  
-              <div class="pull-left" >
-                <label ng-style="color:{{vm.list.color}}">
-                  <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>
-              </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-           
-               {{item}}
 
 
-            <div class="pull-right">0
-              <a class="btn btn-primary" ng-click="vm.remove();">
-              <i class="glyphicon glyphicon-trash"></i></a>
-            </div>
-
-<!--   </div>
- -->              
-
-
-
-
-=======
-<!-- ======= -->
->>>>>>> 0710f97c720d99ff35b894f128b58a93c82f471b
-=======
-======= -->
->>>>>>> 15d4ba19c20728c68cc34070bbb5908eaa2df127
             <li ng-repeat="item in vm.completeList" >  <div class="pull-left" >
     <label>
     <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{list.content}}</label>    
     <div class="pull-right">
     </div>
   </div>
-<<<<<<< HEAD
-<!-- >>>>>>> 6efd6b3acc948504d37231825c0cf35aca88ecbb -->
               
                {{item}}
 
   <a class="btn btn-primary btn-xs" ng-click="remove();">
    <i class="glyphicon glyphicon-trash"></i></a>
 
-=======
-<!-- >>>>>>> 6efd6b3acc948504d37231825c0cf35aca88ecbb
->>>>>>> f3b112011d3e41ac5a976dba3215d14344dfa7f5 -->
-              
-               {{item}}
 
->>>>>>> 15d4ba19c20728c68cc34070bbb5908eaa2df127
             </li>
           </ul>
         </div>
