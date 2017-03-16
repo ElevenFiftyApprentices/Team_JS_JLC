@@ -30,6 +30,14 @@ var ListSchema = new Schema({
     type: Date,
     default: Date.now
   },
+  // Id: {
+  //   type: Number,
+  //   default:
+  // },
+  // UserId: {
+  //   type: Number,
+  //   default:
+  // },
   user: {
     type: Schema.ObjectId,
     ref: 'User'
