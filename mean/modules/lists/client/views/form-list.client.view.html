@@ -9,6 +9,9 @@
         <div class="form-group" show-errors>
           <label class="control-label" for="name"> List Name</label>
             <input name="name" style="width: 200px" type="text" ng-model="vm.list.name" id="name" class="form-control" placeholder="Name" required>
+        <div class="form-group"  style="padding: 20px" >
+          <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
+        </div>
 
           <div ng-messages="vm.form.listForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">List name is required.</p>
@@ -39,20 +42,15 @@
 <section class="listSection" style="margin: 20px 20px 20px 20px">
   <div class="row">
     <div class="col-md-6">
-      <form name="vm.form.listForm" class="form-horizontal" ng-submit="vm.addItem(vm.form.listItems.$valid)" novalidate>
+      <form name="vm.form.formItemList" class="form-horizontal" novalidate>
         <fieldset>
           <label class="control-label" for="listitem">List Item</label>
 
-          
-
-
             <input name="item"  style="width: 200px" type="text" ng-model="vm.list.item" id="item" class="form-control" placeholder="Enter Item" required>
           <div class="form-group" style="padding: 20px" > 
-            <button type="submit" class="btn btn-default">Add Item</button>
+            <button ng-click="vm.addItem()" class="btn btn-default">Add Item</button>
           </div>  
-        <div class="form-group"  style="padding: 20px" >
-          <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
-        </div>
+
 
         </fieldset>  
       </form>    
@@ -68,7 +66,7 @@
               <div class=" pull-left">
               </div>
           <label>
-          <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{list.item}}</label>    
+          <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{item}}</label>    
         <div class="pull-right"></div>
         </div>
               
