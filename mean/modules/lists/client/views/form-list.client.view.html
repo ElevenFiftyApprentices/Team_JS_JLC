@@ -32,7 +32,7 @@
               <input name="color" type="text"  id="color" class="form-control" ng-model="vm.list.color" required />
          </div>
         <!-- item added below (col-md-offset-1" this came from line 30 after col-md-4)
-<!--         <div class="form-group" show-errors>
+         <div class="form-group" show-errors>
           <label class="control-label" for="name">Item</label>
           <input name="item" type="text" ng-model="vm.list.item" id="item" class="form-control" placeholder="item" required>
           <div ng-messages="vm.form.listForm.item.$error" role="alert">
@@ -50,17 +50,19 @@
             <button ng-click="addItem()" class="btn btn-default">Add Item</button>
           </div>  
 
-<<<<<<< HEAD
-                  <div class="form-group">
-          <button type="submit" onclick="save(isValid)" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
+          
+          <div class="form-group">
+            <button type="submit" onclick="save(isValid)" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
+          </div>
 
 
-        </div>
-=======
-              <div class="form-group">
-                <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
-              </div>
->>>>>>> f3b112011d3e41ac5a976dba3215d14344dfa7f5
+          <div class="form-group">
+            <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
+          </div>
+
+
+
+
         </fieldset>  
       </form>    
     </div>
@@ -70,25 +72,25 @@
         <div class="card">
           <ul style="list-style: none" >
 
-<<<<<<< HEAD
             <li ng-repeat="item in vm.completeList" >  
               <div class="pull-left" >
                 <label ng-style="color:{{vm.list.color}}">
                   <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>
               </div>
-=======
-            <li ng-repeat="item in vm.completeList" >  <div class="pull-left" >
-    <label>
-    <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>    
-    <div class="pull-right">
-    </div>
-  </div>
->>>>>>> 6efd6b3acc948504d37231825c0cf35aca88ecbb
-              
+           
                {{item}}
 
-  <a class="btn btn-primary" ng-click="vm.remove();">
-   <i class="glyphicon glyphicon-trash"></i></a>
+
+            <div class="pull-right">
+              <a class="btn btn-primary" ng-click="vm.remove();">
+              <i class="glyphicon glyphicon-trash"></i></a>
+            </div>
+
+<!--   </div>
+ -->              
+
+
+
 
             </li>
           </ul>
