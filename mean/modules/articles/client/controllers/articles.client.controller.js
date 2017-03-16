@@ -5,6 +5,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
   function ($scope, $stateParams, $location, Authentication, Articles) {
     $scope.authentication = Authentication;
 
+
     // Create new Article
     $scope.create = function (isValid) {
       $scope.error = null;
