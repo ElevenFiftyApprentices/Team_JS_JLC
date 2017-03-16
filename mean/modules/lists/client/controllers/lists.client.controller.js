@@ -23,7 +23,7 @@
     // Remove existing List
     function remove() {
       if ($window.confirm('Are you sure you want to delete?')) {
-        vm.list.$remove($state.go('lists.list'));
+        vm.list.$remove($state.go('lists.view'));
       }
     }
       //add items to list array

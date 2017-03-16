@@ -35,7 +35,7 @@ angular.module('articles').controller('ArticlesController', ['$scope', '$statePa
     };
 
     // Remove existing Article
-    $scope.remove = function (article) {
+    this.$scope.remove = function (article) {
       if (article) {
         article.$remove();
 
