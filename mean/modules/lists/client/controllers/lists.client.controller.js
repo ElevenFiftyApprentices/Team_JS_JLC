@@ -68,7 +68,7 @@
 
 
 
-      //old code below
+      //old code below(ITS A TRAP)
       // if (vm.list._id) {
       //   vm.list.$update(successCallback, errorCallback);
       // } else {

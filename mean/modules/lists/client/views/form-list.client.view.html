@@ -1,19 +1,15 @@
-<section style="margin: 20px 20px 20px 20px">
-  <div class="page-header">
+<section>
+  <div  style="margin: 20px 20px 20px 20px" class="page-header">
     <h1 style="padding:20px">{{vm.list._id ? 'Edit List' : 'New List'}}</h1>
   </div>
 
-  <div class="col-md-9">
+  <div class="col-md-6" align="left">
     <form name="vm.form.listForm" class="form-horizontal" ng-submit="vm.save(vm.form.listForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
           <label class="control-label" for="name"> List Name</label>
-<!-- <<<<<<< HEAD
- -->          <input name="name" style="width: 200px" type="text" ng-model="vm.list.name" id="name" class="form-control" placeholder="Name" required>
-<!-- =======
- --> <!--            <input name="name" type="text" ng-model="vm.list.name" id="name" class="form-control" placeholder="Name" required> -->
-<!-- >>>>>>> f3b112011d3e41ac5a976dba3215d14344dfa7f5
- -->
+            <input name="name" style="width: 200px" type="text" ng-model="vm.list.name" id="name" class="form-control" placeholder="Name" required>
+
           <div ng-messages="vm.form.listForm.name.$error" role="alert">
             <p class="help-block error-text" ng-message="required">List name is required.</p>
           </div>
@@ -26,26 +22,26 @@
       </fieldset>
     </form>
   </div>
-</section>
-        <div class="form-group col-md-4" style="margin-right:30px">
+
+        <div class="form-group col-md-6" style="margin-right:30px">
           <label class="control-label" for="color-picker">Color</label>
             <input type="color" style="width: 200px" name="color-picker" ng-model="vm.list.color" class="form-control" />
         </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label class="control-label" for="color">Please input color hex code</label>
               <input style="width: 200px" name="color" type="text"  id="color" class="form-control" ng-model="vm.list.color" required />
          </div>
         <!-- item added below (col-md-offset-1" this came from line 30 after col-md-4)
-<!--         <div class="form-group" show-errors>
+<        <div class="form-group" show-errors>
           <label class="control-label" for="name">Item</label>
           <input name="item" type="text" ng-model="vm.list.item" id="item" class="form-control" placeholder="item" required>
           <div ng-messages="vm.form.listForm.item.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Error</p>
           </div>
         </div> -->
-<section class="listSection" style="margin: 20px 20px 20px 20px">
+  <div class="listSection" style="margin: 20px 20px 20px 20px">
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
       <form name="vm.form.listForm" class="form-horizontal" ng-submit="vm.addItem(vm.form.listItems.$valid)" novalidate>
         <fieldset>
           <label class="control-label" for="listitem">List Item</label>
@@ -53,64 +49,32 @@
           <div class="form-group" style="padding: 20px" > 
             <button type="submit" class="btn btn-default">Add Item</button>
           </div>  
-
-<!-- <<<<<<< HEAD
- -->                  <div class="form-group"  style="padding: 20px" >
+        <div class="form-group"  style="padding: 20px" >
           <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
         </div>
-<!-- =======
-              <div class="form-group">
-                <button type="submit" class="btn btn-default">{{vm.list._id ? 'Update List' : 'Create New List'}}</button>
-              </div>
->>>>>>> f3b112011d3e41ac5a976dba3215d14344dfa7f5 -->
         </fieldset>  
       </form>    
     </div>
 
-    <div class="col-md-6">
+
+    <div class="col-md-6" align="right">
       <h3>List</h3>
         <div class="card">
-<!-- <<<<<<< HEAD
- -->          <ul style="list-style: none">
+          <ul style="list-style: none">
             <li ng-repeat="item in vm.completeList track by $index">
               <div class=" pull-left">
-                <!-- <label><input type="checkbox" class="checkbox3" ng-click="functionItemChecked()"> {{list.content}}</label> -->
               </div>
-<!-- =======
- --><!--           <ul style="list-style: none" >
 
-<!-- <<<<<<< HEAD -->
-            <li ng-repeat="item in vm.completeList" >  
-              <div class="pull-left" >
-                <label ng-style="color:{{vm.list.color}}">
-                  <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{article.content}}</label>
-              </div>
-<<<<<<< HEAD
-<!-- ======= -->
-=======
-======= -->
->>>>>>> 15d4ba19c20728c68cc34070bbb5908eaa2df127
             <li ng-repeat="item in vm.completeList" >  <div class="pull-left" >
-    <label>
-    <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{list.content}}</label>    
-    <div class="pull-right">
-    </div>
-  </div>
-<<<<<<< HEAD
-<!-- >>>>>>> 6efd6b3acc948504d37231825c0cf35aca88ecbb -->
+          <label>
+          <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{list.content}}</label>    
+        <div class="pull-right"></div>
+        </div>
               
                {{item}}
 
-  <a class="btn btn-primary btn-xs" ng-click="remove();">
-   <i class="glyphicon glyphicon-trash"></i></a>
-
-=======
-<!-- >>>>>>> 6efd6b3acc948504d37231825c0cf35aca88ecbb
->>>>>>> f3b112011d3e41ac5a976dba3215d14344dfa7f5 -->
-              
-               {{item}}
-
->>>>>>> 15d4ba19c20728c68cc34070bbb5908eaa2df127
+             <a class="btn btn-primary btn-xs" ng-click="remove();">
+             <i class="glyphicon glyphicon-trash"></i></a>
             </li>
           </ul>
         </div>
