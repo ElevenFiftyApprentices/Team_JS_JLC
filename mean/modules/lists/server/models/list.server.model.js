@@ -33,6 +33,12 @@ var ListSchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  color: {
+    type: String,
+    default: '',
+    required: 'Please choose font hex color for shopping list',
+    trim: true
   }
 });
 
