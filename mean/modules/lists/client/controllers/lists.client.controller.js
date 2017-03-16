@@ -19,6 +19,7 @@
     vm.save = save;
     vm.completeList = [];
     vm.addItem = addItem;
+    
 
     // Remove existing List
     function remove() {
@@ -68,7 +69,7 @@
 
 
 
-      //old code below
+      //old code below(ITS A TRAP)
       // if (vm.list._id) {
       //   vm.list.$update(successCallback, errorCallback);
       // } else {
