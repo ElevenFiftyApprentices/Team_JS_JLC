@@ -57,20 +57,17 @@
     </div>
 
 
-    <div class="col-md-6" align="right">
+    <div class="col-md-6" align="left">
 
       <h3>List</h3>
         <div class="card">
           <ul style="list-style: none">
-            <li ng-repeat="item in vm.completeList track by $index" style="color: {{vm.list.color}}">
+            <li ng-repeat="item in vm.completeList track by $index" style="color: {{vm.list.color}}; text-align: left">
               <div class=" pull-left">
               </div>
           <label>
-          <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{item}}</label>    
-        <div class="pull-right"></div>
-        </div>
+          <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{item.item}}</label>    
               
-               {{item}}
 
              <a class="btn btn-primary btn-xs" ng-click="remove();">
              <i class="glyphicon glyphicon-trash"></i></a>

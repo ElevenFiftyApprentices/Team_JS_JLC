@@ -31,7 +31,10 @@
     }
       //add items to list array
     function addItem() {
-      vm.completeList.push(vm.list.item);
+      vm.completeList.push({
+        item: vm.list.item,
+        
+      });
 
       vm.list.item = '';
 
