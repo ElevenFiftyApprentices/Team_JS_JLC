@@ -28,12 +28,12 @@
       }
     }
       //add items to list array
-      function addItem() {
-        vm.completeList.push(vm.list.item);
+    function addItem() {
+      vm.completeList.push(vm.list.item);
 
-        vm.list.item = '';
+      vm.list.item = '';
 
-        if (!isValid) {
+      if (!isValid) {
         $scope.$broadcast('show-errors-check-validity', 'vm.form.formItemList');
         return false;
       }
