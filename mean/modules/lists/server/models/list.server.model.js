@@ -17,7 +17,7 @@ var ListSchema = new Schema({
     trim: true
   },
   item: {
-    type: String,
+    type: Array,
     default: '',
     required: 'Please choose some items for your shopping list',
     trim: true
