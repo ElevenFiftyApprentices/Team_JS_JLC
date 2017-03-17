@@ -1,5 +1,4 @@
-/*REDIRECTING IS FIXED*/
-
+/*LINT PROBLEM IS FIXED*/
 
 (function () {
   'use strict';
@@ -36,10 +35,10 @@
 
       vm.list.item = '';
 
-        if (!isValid) {
-        $scope.$broadcast('show-errors-check-validity', 'vm.form.formItemList');
-        return false;
-      }
+      // if (!isValid) {
+      //   $scope.$broadcast('show-errors-check-validity', 'vm.form.formItemList');
+      //   return false;
+      // }
 
       // TODO: move create/update logic to service
       if (vm.list._id) {
