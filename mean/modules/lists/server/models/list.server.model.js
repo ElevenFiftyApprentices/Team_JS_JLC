@@ -17,10 +17,18 @@ var ListSchema = new Schema({
     trim: true
   },
   item: {
-    type: Array,
-    default: '',
-    required: 'Please choose some items for your shopping list',
-    trim: true
+    name:{
+      type: String,
+      default: ''
+    },
+    // isChecked:{
+    //   type: Boolean,
+    //   default: false
+    // },
+  },
+  items: {
+    type: [],
+    default: []
   },
   created: {
     type: Date,
