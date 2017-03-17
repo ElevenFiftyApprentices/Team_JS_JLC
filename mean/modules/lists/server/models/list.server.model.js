@@ -48,6 +48,12 @@ var ListSchema = new Schema({
     required: 'Please choose font hex color for shopping list',
     trim: true
   }
+  // isChecked: {
+  //   type: String,
+  //   default: '',
+  //   required: 'Please choose font hex color for shopping list',
+  //   trim: true
+  // }
 });
 
 mongoose.model('List', ListSchema);
