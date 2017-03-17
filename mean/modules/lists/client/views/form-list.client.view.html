@@ -31,7 +31,7 @@
 
         <div class="form-group col-md-4" style="margin-right:30px">
           <label class="control-label" for="color-picker">Color</label>
-            <input type="color" style="width: 200px" name="color-picker" ng-model="vm.list.color" class="form-control" />
+            <input type="color" name="color-picker" ng-model="vm.list.color" class="form-control" />
         </div>
 
          <div class="form-group col-md-4">
@@ -61,19 +61,26 @@
 
       <h3>List</h3>
         <div class="card">
-          <ul style="list-style: none">
-            <li ng-repeat="item in vm.completeList track by $index">
-              <div class=" pull-left">
-              </div>
-          <label>
-          <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{item}}</label>    
-        <div class="pull-right"></div>
-        </div>
-              
-               {{item}}
 
-             <a class="btn btn-primary btn-xs" ng-click="remove();">
-             <i class="glyphicon glyphicon-trash"></i></a>
+          <ul style="list-style: none">
+            <li ng-repeat="item in vm.completeList track by $index" style="color: {{vm.list.color}}">
+
+              <div class=" pull-left">
+                <label>
+                <input type="checkbox" class="checkbox3" ng-click="functionItemChecked()">{{list.item}}
+               </label>
+              </div>
+    <div class="pull-right"></div>
+
+
+              {{item}}
+
+<div class="pull-right">
+  <a class="btn btn-primary btn-xs" ng-click="remove();">
+   <i class="glyphicon glyphicon-trash"></i></a>
+</div>
+              
+     
             </li>
 
 <br>
