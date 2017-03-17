@@ -41,16 +41,16 @@
       // }
 
       // TODO: move create/update logic to service
-      if (vm.list._id) {
+      // if (vm.list._id) {
 
-        vm.list.$update().then(
-          $state.go('lists.list')
-          );
-      } else {
-        vm.list.$save().then(
-          $state.go('lists.list')
-          );
-      }
+      //   vm.list.$update().then(
+      //     $state.go('lists.list')
+      //     );
+      // } else {
+      //   vm.list.$save().then(
+      //     $state.go('lists.list')
+      //     );
+      // }
 
       function successCallback(res) {
         $state.go('lists.view', {
