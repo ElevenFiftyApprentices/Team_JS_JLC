@@ -1,6 +1,6 @@
 <section style="margin: 10px 10px 10px 10px !important">
   <div class="page-header">
-    <h1 ng-bind="vm.list.name" ng-style="{color: vm.product.color}"></h1>
+    <h1 ng-bind="vm.list.name" ng-style="{color: vm.list.color}"></h1>
   </div>
   <div class="pull-right"
        ng-show="vm.list.isCurrentUserOwner">
@@ -11,6 +11,13 @@
     <a class="btn btn-primary" ng-click="vm.remove()">
       <i class="glyphicon glyphicon-trash"></i>
     </a>
+  </div>
+  <!--binding items and color to list-->
+  <div>
+
+    <h3 class="lead" ng-repeat="item in vm.list.items" ng-style="{color: vm.list.color}">{{item.item}}</h3>
+  
+
   </div>
   <small>
     <em class="text-muted">
