@@ -1,26 +1,55 @@
-<section style="margin: 10px 10px 10px 10px !important">
-  <div class="page-header">
-    <h1 ng-bind="vm.list.name"></h1>
+<section class="listSection" style="margin: 20px 20px 20px 20px">
+  <div class="row">
+    <div class="col-md-6">
+      <form name="vm.form.formItemList" class="form-horizontal" novalidate>
+        <fieldset>
+          <label class="control-label" for="listitem">List Item</label>
+
+                      <input name="item"  style="width: 200px" type="text" ng-model="vm.list.item" id="item" class="form-control" placeholder="Enter Item" required>
+          <div class="form-group" style="padding: 20px" > 
+            <button ng-click="vm.addItem()" class="btn btn-default">Add Item</button>
+          </div>  
+
+
+
+        </fieldset>  
+      </form>    
+    </div>
+
+
+    <div class="col-md-6" align="right">
+
+      <h3>List</h3>
+        <div class="card">
+          <ul style="list-style: none">
+
+
+
+            <li ng-repeat="item in vm.completeList track by $index">
+              <div class=" pull-left">
+              </div>
+          <label>
+          <input type="checkbox" class="checkbox4" ng-click="functionItemChecked()"> {{item}}</label>    
+
+
+        <div class="pull-right"></div>
+        </div>
+    
+           
+               {{item}}
+
+
+            <div class="pull-right">
+              <a class="btn btn-primary btn-xs" ng-click="remove();">
+              <i class="glyphicon glyphicon-trash"></i></a>
+            </div>
+
+            </li>
+
+<br>
+
+          </ul>
+      </div>
+    </div>
   </div>
-  <div class="pull-right"
-       ng-show="vm.list.isCurrentUserOwner">
-    <a class="btn btn-primary"
-       ui-sref="lists.edit({ listId: vm.list._id })">
-      <i class="glyphicon glyphicon-edit"></i>
-    </a>
-    <a class="btn btn-primary" ng-click="vm.remove()">
-      <i class="glyphicon glyphicon-trash"></i>
-    </a>
-  </div>
-  <small>
-    <em class="text-muted">
-      Posted on
-      <span ng-bind="vm.list.created | date:'mediumDate'"></span>
-      by
-      <span ng-if="vm.list.user"
-            ng-bind="vm.list.user.displayName"></span>
-      <span ng-if="!vm.list.user">Deleted User</span>
-    </em>
-  </small>
-  <p class="lead" ng-bind="vm.list.content"></p>
 </section>
