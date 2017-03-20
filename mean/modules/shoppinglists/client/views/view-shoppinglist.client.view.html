@@ -1,0 +1,106 @@
+<section>
+<style>
+body {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  /*color: white;*/
+  color: #333;
+  background-image: url("/modules/core/client/img/brand/pp8.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+}
+.item-checked {
+  text-decoration: line-through;
+}
+
+</style>
+ <div class="page-header">
+  <div style="color: {{vm.shoppinglist.color}}">
+   <h1 ng-bind="vm.shoppinglist.name"></h1>
+  </div>
+   <small>
+    <em>
+      Updated on 
+     <span ng-bind="vm.shoppinglist.updated | date:'medium'"></span>
+      by
+      <span ng-if="vm.shoppinglist.user"
+            ng-bind="vm.shoppinglist.user.displayName"></span>
+       <span ng-if="!vm.shoppinglist.user">Deleted User</span>
+    </em>
+   </small>
+ </div>
+  <div>
+   <form name="vm.form.shoppinglistItemForm" ng-submit="vm.addItem(vm.form.shoppinglistItemForm.$valid)" novalidate>
+    <table class="table">
+      <thead>
+        <tr>          
+          <th style="width: 5%"></th>
+          <th style="width: 20%">Item</th>
+          <th style="width: 25%">Quantity</th>
+          <th style="width: 20%">Priority</th>
+          <th style="width: 20%">Notes</th>
+        </tr>
+        <tr>
+          <th stype="width: 5%"></th>
+          <th><input type="text" name="item" ng-model="vm.name"></th>
+          <th><input type="text" name="quantity" ng-model="vm.quantity"></th>
+          <th><select type="text" name="priority" ng-model="vm.priority">
+              <option>Right Now</option>
+              <option>Will Need Soon</option>
+              <option>Whenever</option>
+            </select></th>
+          <th><input type="text" name="note" ng-model="vm.note" /></th>
+         <td><button type="submit" class="btn btn-success" >Add</button></td>
+        </tr>
+      </thead>
+    </table>
+  </form>
+</div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th style="width: 5%">Done</th>
+        <th style="width: 20%"><a href="#" style="color: black" ng-click="orderByField= 'name'; reverseSort = !reverseSort">Items</a></th>
+        <th style="width: 25%"><a href="#" style="color: black" ng-click="orderByField='quantity'; reverseSort = !reverseSort">Quantity </a></th>
+        <th style="width: 20%"><a href="#" style="color: black" ng-click="orderByField='priority'; reverseSort = !reverseSort">Priority</a></th>
+        <th style="width: 20%">Notes</th>
+        <th style="width: 10%">Delete</th>
+      </tr>
+    </thead>
+    <tbody style="color: {{vm.shoppinglist.color}}" >
+      <tr ng-repeat="item in vm.shoppinglist.items | orderBy:orderByField:reverseSort">
+        <td><input type="checkbox" ng-checked="item.isChecked" ng-click="vm.isChecked(item)"/></td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.name}}</td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.quantity}}</td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.priority}}</td>
+        <td ng-class="{'item-checked' : item.isChecked}">{{item.note}}</td>
+        <td><span class="fa fa-times" ng-click="vm.removeItem(item)"></span></td>
+      </tr>
+    </tbody>
+  </table>
+    <button class="btn btn-success" type="button" ng-click="vm.deleteChecked()">Removed Checked</button>
+     <div class="pull-right">
+      <a class="btn btn-success"
+       ui-sref="shoppinglists.edit({ shoppinglistId: vm.shoppinglist._id })">
+       <i class="glyphicon glyphicon-edit"></i>
+      </a>
+    <a class="btn btn-success" ng-click="vm.remove()">
+      <i class="glyphicon glyphicon-trash"></i>
+    </a>
+  </div>
+<small>
+  <em>
+   Created on
+    <span ng-bind="vm.shoppinglist.created | date:'medium'"></span>
+      by
+      <span ng-if="vm.shoppinglist.user"
+            ng-bind="vm.shoppinglist.user.displayName"></span>
+       <span ng-if="!vm.shoppinglist.user">Deleted User</span>
+  </em>
+</small>
+  <p class="lead" ng-bind="vm.shoppinglist.content"></p>
+</section>
