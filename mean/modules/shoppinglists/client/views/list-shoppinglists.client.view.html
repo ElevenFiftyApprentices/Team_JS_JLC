@@ -1,0 +1,45 @@
+<section>
+<style>
+body {
+   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  /*color: white;*/
+  color: #333;
+  background-image: url("/modules/core/client/img/brand/pp4.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+}
+</style>
+  <div class="page-header">
+    <h1>Saved Shopping Lists <button ui-sref="shoppinglists.create" class="btn btn-success btn-md">Add New List</button></h1>
+
+  </div>
+   <div class="list-group">
+    <div class="col-xs-6 col-sm-4" style="padding-bottom:30px"
+    ng-repeat="shoppinglist in vm.shoppinglists">
+      <a ui-sref="shoppinglists.view({ shoppinglistId: shoppinglist._id })"
+       class="list-group-item">
+        <h4 class="list-group-item-heading" ng-bind="shoppinglist.name"></h4>
+         <small class="list-group-item-text">
+        Created on
+          <span ng-bind="shoppinglist.created | date:'medium'"></span>
+           by
+           <span ng-if="shoppinglist.user" ng-bind="shoppinglist.user.displayName"></span>
+            <span ng-if="!shoppinglist.user">Deleted User</span>
+           </small>
+            <br>
+             <small class="list-group-item-text">
+              Updated on 
+              <span ng-bind="shoppinglist.updated | date:'medium'"></span>
+               by
+               <span ng-if="shoppinglist.user"
+            ng-bind="shoppinglist.user.displayName"></span>
+                <span ng-if="!shoppinglist.user">Deleted User</span>
+           </small>
+         </a>
+       </div>
+     </div>
+</section>
