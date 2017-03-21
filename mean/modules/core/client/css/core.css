@@ -35,6 +35,7 @@ a:hover .header-profile-image {
 .has-error .help-inline.error-text {
   display: inline;
 }
+<<<<<<< HEAD
 
 
 /*********************************************************************
@@ -122,3 +123,5 @@ div .list-group-item {
 
 input[type="checkbox"]:checked { 
   text-decoration: line-through; 
+=======
+>>>>>>> 4fd964f6b941fd344d2871252efc480631b9daad
